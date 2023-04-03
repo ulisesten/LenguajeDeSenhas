@@ -7,40 +7,68 @@
     android:background="#020202"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/show_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:maxHeight="100dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/viewFinder"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.camera.view.PreviewView
-            android:id="@+id/viewFinder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/btn_analizar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/realizar_captura"
+        android:maxHeight="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_camera_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_description"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="#F6FAF9" />
 
-        <TextView
-            android:id="@+id/show_description"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="bottom"
-            android:ems="10"
-            android:gravity="start|top"
-            android:maxHeight="100dp" />
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageButton
-            android:id="@+id/btn_analizar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/realizar_captura"
-            android:maxHeight="100dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_baseline_camera_24"
-            app:tint="#F6FAF9" />
-    </LinearLayout>
+    </androidx.camera.view.PreviewView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@color/material_dynamic_neutral20"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:subtitle="@string/realizar_captura"
+        app:title="@string/app_name" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
